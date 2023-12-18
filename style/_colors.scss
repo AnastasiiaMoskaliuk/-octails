@@ -1,0 +1,57 @@
+//------Header------//
+
+// Text
+$colorHeaderText:var(--Black, #202025);
+$colorThemaDark: var(--Gray, #5F6775);
+$colorThemaLight: var(--Grapefruit, #FD5103);
+
+// BorderBtnThema
+$border:1px solid var(--Grapefruit, #fd5103);
+
+
+//------Footer------//
+$bgColorFooter:#fd5103;
+
+// Text
+$colorFooterContacts:rgba(255, 255, 255, 0.60);
+
+//Network
+$colorHoverNetworks:#fd0303;
+
+// Button
+$colorFooterBtn:#fd0303;
+$colorFooterText:var(--Black, #ffffff);
+
+
+//------Hero------//
+$colorHeroh1:#fd5103;
+$colorHeroText:var(--Black, #202025);
+$colorHeroTextHover:var(--Grapefruit, #FD5103);
+$colorHeroLinkChange:#5F6775;
+
+$borderHeroSelect:1px solid var(--Grapefruit, #fd5103);
+$colorHeroSelect: #fd5103;
+$scrollbarHero:var(--Gray, #5f6775);
+$colorHeroLabel:var(--Gray, #5f6775);
+
+
+//------CoctailsList------//
+
+// Text
+$colorListTitle:var(--Black, #202025);
+$colorListText:var(--Black, #202025);
+
+// BgButton
+$bgcolorBtnInfoDefault:var(--Auxiliary-orange, #FE7031);
+$bgcolorBtnInfoHover:#F5F5F5;
+$bgcolorBtnInfoPressed:var(--Grapefruit, #FD5103);
+
+$bgcolorBtnAddDefault:transparent;
+$bgcolorBtnAddHover:#F5F5F5;
+
+// BorderButton
+$borderBtnAddDefault: 2px solid #FD5103;
+$borderBtnAddHover: 1px solid #FD5103;
+
+// BorderCards
+$borderCards:1px solid var(--Grapefruit, #FD5103);
