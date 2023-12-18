@@ -1,0 +1,22 @@
+@import "./../style/colors";
+@import "./../style/container";
+
+.main {
+  &__title {
+    color: $colorListTitle;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 191%;
+
+    @media (min-width: 768px) {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 131%;
+    }
+    @media (min-width: 1280px) {
+      font-size: 48px;
+      line-height: 150%;
+    }
+  }
+}
