@@ -132,3 +132,31 @@
     display: none;
   }
 }
+
+.modal {
+  background-color: #ffffff;
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  @media (min-width: 768px){
+
+  }
+
+  &__close {
+    position: absolute;
+    top: 64px;
+    right: 116px;
+  }
+
+  &__container {
+    position: relative;
+    top: 12%;
+    display: flex;
+    gap: 60px;
+  }
+}
