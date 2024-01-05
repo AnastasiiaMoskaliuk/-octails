@@ -19,8 +19,8 @@ const CardsListCoctails: React.FC<CardProps> = ({
       <div className={s.cards__context}>
       <h3 className={s.cards__title}>{text}</h3>
       <div className={s.cards__buttons}>
-        <button className={s.cards__buttons__more}>Learn more</button>
-        <button className={s.cards__buttons__add}>Add to</button>
+        <button type="button" className={s.cards__buttons__more}>Learn more</button>
+        <button type="button" className={s.cards__buttons__add}>Add to</button>
       </div>
       </div>
     </div>
