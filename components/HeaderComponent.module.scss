@@ -58,6 +58,7 @@
       gap: 172px;
     }
   }
+
   &__search {
     display: none;
 
@@ -134,29 +135,120 @@
 }
 
 .modal {
-  background-color: #ffffff;
-  display: flex;
-  gap: 60px;
-  justify-content: center;
-  align-items: flex-start;
   position: fixed;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
   width: 100%;
-  z-index: 100;
-  @media (min-width: 768px){
+  height: 100%;
 
+  &__nav {
+    display: flex;
+
+    color: var(--Black, #202025);
+    font-size: 28px;
+    font-weight: 400;
+
+    line-height: 86%;
+    letter-spacing: 0.36px;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
-  &__close {
-    position: absolute;
-    top: 64px;
-    right: 116px;
+  &__forms {
+    display: flex;
+  }
+
+  &__search {
+    display: flex;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &__button {
+      display: flex;
+      width: 280px;
+      height: 40px;
+
+      border: $border;
+      border-radius: 4px;
+    }
+
+    &__input {
+      padding: 8px;
+      width: 235px;
+      height: 35px;
+
+      border: none;
+      outline: none;
+    }
+
+    &__line {
+      border-left: $border;
+      height: 100%;
+    }
+
+    &__svg {
+      width: 40px;
+      padding: 8px;
+    }
+  }
+  &__thema {
+    display: flex;
+    gap: 12px;
+
+    &__light {
+      color: $colorThemaLight;
+    }
+
+    &__dark {
+      color: var(--Gray, #5f6775);
+    }
+
+    &__button {
+      width: 40px;
+      height: 20px;
+
+      border-radius: 20px;
+      border: 0.6px solid #fd5103;
+    }
   }
 
   &__container {
     position: relative;
-    top: 12%;
     display: flex;
-    gap: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    &__img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+
+  &__rotated {
+    transform: rotate(180deg);
   }
 }

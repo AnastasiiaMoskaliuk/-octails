@@ -2,7 +2,7 @@
 import Image from "next/image";
 import classNames from "classnames";
 import s from "./HeroSection.module.scss";
-import Coctails from "./../../../images/hero/Coctails.png";
+import Coctails from "./../../images/hero/Coctails.png";
 import Select from "react-select";
 
 const HeroSection = () => {
