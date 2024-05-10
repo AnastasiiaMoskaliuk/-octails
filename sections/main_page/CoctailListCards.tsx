@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
-import s from "./CoctailCards.module.scss";
+import s from "./CoctailListCards.module.scss";
 import MainTitleComponent from "../../components/MainTitleComponent";
-import CardsListCoctails from "@/components/CardsListCoctails";
+import CardCoctails from "@/components/CardCoctails";
 import data, { CardData } from "../../assets/data";
 import { useState, useEffect } from "react";
 
-const CoctailCards = () => {
+const CoctailListCards = () => {
   const handleButtonClick = () => {
     console.log("Button clicked!");
   };
@@ -17,7 +17,7 @@ const CoctailCards = () => {
 
       <div className={s.card__container}>
         {data.map((card: CardData) => (
-          <CardsListCoctails
+          <CardCoctails
             key={card.id}
             cardData={card}
             onButtonClick={handleButtonClick}
@@ -28,4 +28,4 @@ const CoctailCards = () => {
   );
 };
 
-export default CoctailCards;
+export default CoctailListCards;
