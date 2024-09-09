@@ -1,5 +1,5 @@
-"use client"
-import React, {useState} from "react";
+"use client";
+import React, { useState } from "react";
 
 interface ButtonProps {
   text: string;
@@ -10,9 +10,7 @@ interface ButtonProps {
   target?: string;
   tag?: "a" | "button";
   type?: "submit" | "button" | "reset";
-  typeButton:
-    | "MainButton"
-    | "WishButton"
+  typeButton: "MainButton" | "WishButton" | "FollowButton";
 }
 
 const ButtonComponent: React.FC<ButtonProps> = ({
@@ -32,11 +30,14 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 
   const bgColor1 = "bg-[#fe7031]";
   const bgColor2 = "bg-transparent";
+  const bgColor3 = "bg-[#fd0303]";
   const textColor1 = "text-[#fe7031]";
   const textColor2 = "text-[#ffffff]";
   const opacity = "disabled:opacity-50";
   const hoverBgColor1 = "hover:bg-[#FD5103]";
+  const hoverBgColor2 = "hover:bg-[#c81010]";
   const activeBgColor1 = "active:bg-[#FD5103]";
+  const activeBgColor2 = "active:bg-[#c81010]";
   const animation = "transition duration-300 ease-in-out";
   const textSize = "text-[12px] md:text-[14px] lg:text-[16px]";
   const borderColor = "border solid border-1 border-[#fe7031]";
@@ -48,7 +49,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   };
 
   const buttonContent = () => {
-     if (typeButton === "WishButton") {
+    if (typeButton === "WishButton") {
       return (
         <Tag
           type={type}
@@ -58,7 +59,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
           onClick={handleButtonClick}
           className={`${className} ${borderColor} ${animation} ${padding} ${textSize} ${bgColor2} ${textColor1} flex flex-row items-center justify-center rounded font-bold ${opacity}`}
         >
-            {text}
+          {text}
           {isActive ? (
             <svg
               className={`${animation} fill-[#fe7031] ml-[8px] w-[16px] h-[16px] lg:w-[24px] lg:h-[24px]`}
@@ -90,8 +91,6 @@ const ButtonComponent: React.FC<ButtonProps> = ({
               />
             </svg>
           )}
-
-        
         </Tag>
       );
     } else if (typeButton === "MainButton") {
@@ -103,6 +102,19 @@ const ButtonComponent: React.FC<ButtonProps> = ({
           onClick={onClick}
           href={href}
           className={`${className} ${bgColor1} ${animation} ${padding} ${textSize} ${textColor2} flex flex-row items-center justify-center rounded font-bold ${activeBgColor1} ${hoverBgColor1} ${opacity}`}
+        >
+          {text}
+        </Tag>
+      );
+    } else if (typeButton === "FollowButton") {
+      return (
+        <Tag
+          type={type}
+          target={target}
+          disabled={disabled}
+          onClick={onClick}
+          href={href}
+          className={`${className} ${bgColor3} ${animation} ${padding} ${textSize} ${textColor2} flex flex-row items-center justify-center rounded font-bold ${activeBgColor2} ${hoverBgColor2} ${opacity}`}
         >
           {text}
         </Tag>
