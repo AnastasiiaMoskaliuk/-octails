@@ -1,5 +1,5 @@
 import s from "./MainTitleComponent.module.scss";
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
 interface MainTitleProps {
@@ -7,10 +7,10 @@ interface MainTitleProps {
   className?: string;
 }
 
-const MainTitleComponent: React.FC<MainTitleProps> = ({ title, className }) => {
+const MainTitleComponent: FC<MainTitleProps> = ({ title, className }) => {
   return (
-    <div className={classNames(s.main, className)}>
-      <h2 className={s.main__title}>{title}</h2>
+    <div className={`${className} container`}>
+      <h2 className="text-center text-[22px] font-semibold md:text-[32px] md:font-bold lg:text-[48px]">{title}</h2>
     </div>
   );
 };
