@@ -43,7 +43,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   const borderColor = "border solid border-1 border-[#fe7031]";
   const padding =
     "px-[24px] py-[9px] md:px-[32px] md:py-[11px] lg:px-[40px] lg:py-[14px]";
-
+const padding2 = "py-[11px] px-[34px]"
   const handleButtonClick = () => {
     setIsActive(!isActive);
   };
@@ -114,7 +114,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
           disabled={disabled}
           onClick={onClick}
           href={href}
-          className={`${className} ${bgColor3} ${animation} ${padding} ${textSize} ${textColor2} flex flex-row items-center justify-center rounded font-bold ${activeBgColor2} ${hoverBgColor2} ${opacity}`}
+          className={`${className} ${bgColor3} ${animation} ${padding2} ${textSize} ${textColor2}  h-[52px] flex flex-row items-center justify-center rounded font-bold ${activeBgColor2} ${hoverBgColor2} ${opacity}`}
         >
           {text}
         </Tag>

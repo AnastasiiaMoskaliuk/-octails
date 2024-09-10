@@ -1,17 +1,15 @@
 "use client";
 import Link from "next/link";
-import { useDisclosure } from "@mantine/hooks";
-import { Modal } from "@mantine/core";
-import ArrowMe from "./../images/header/arrow-up.svg";
 import Image from "next/image";
-import classNames from "classnames";
+import React, { FC } from "react";
+import { Modal } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+
+import SearchComponent from "./SearchComponent";
+
 import Logo from "@/images/header/logo.svg";
-import s from "./HeaderComponent.module.scss";
-import Search from "./../images/header/search.svg";
-import React, { useState, useEffect, FC } from "react";
 import BurgerMenu from "./../images/header/burger-menu.svg";
 import BurgermenuClose from "./../images/header/BurgerMenuClose.svg";
-import SearchComponent from "./SearchComponent";
 
 interface HeaderProps {
   className?: string;
