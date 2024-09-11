@@ -70,7 +70,7 @@ const FooterComponent = () => {
   );
 
   return (
-    <footer className="bg-[#fe7031]">
+    <footer className="bg-[#fd5103]">
       <div className="container flex flex-col items-center py-[60px] gap-[50px] md:flex-row md:items-start md:justify-between">
         <div>
           <FooterLogo />

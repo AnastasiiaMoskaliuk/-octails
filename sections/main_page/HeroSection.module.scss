@@ -2,99 +2,10 @@
 @import "./../../style/container";
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  margin-top: 60px;
-  margin-bottom: 40px;
-
-  &__content {
-    @media (min-width: 768px) {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-    @media (min-width: 1280px) {
-      align-items: flex-start;
-      gap: 37px;
-    }
-  }
-
-  &__context {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-
-    @media (min-width: 768px) {
-      align-items: flex-start;
-    }
-  }
-
-  &__title {
-    color: $colorHeroh1;
-
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 190%;
-    width: 287px;
-
-    @media (min-width: 768px) {
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 161.538%;
-      width: 336px;
-    }
-    @media (min-width: 1280px) {
-      font-size: 52px;
-      font-weight: 600;
-      line-height: 150%;
-      width: 660px;
-      text-align: left;
-    }
-  }
-
-  &__paragraph {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 200%;
-    letter-spacing: 0.28px;
-    text-align: center;
-
-    @media (min-width: 768px) {
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 200%;
-      letter-spacing: 0.28px;
-    }
-    @media (min-width: 1280px) {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 28px;
-      text-align: left;
-    }
-  }
 
   &__change {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: flex-start;
 
-    &__link {
-      display: none;
-
-      @media (min-width: 768px) {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 324px;
-      }
-      @media (min-width: 1280px) {
-        gap: 10px;
-        width: 440px;
-      }
-    }
-
+    
     &__cards {
       @media (min-width: 768px) {
         width: 24px;
@@ -111,27 +22,6 @@
       &:hover {
         color: $colorHeroTextHover;
         transform: scale(1.1);
-      }
-    }
-  }
-
-  &__img {
-    display: none;
-
-    @media (min-width: 768px) {
-      display: block;
-      width: 368px;
-      height: 329px;
-    }
-    @media (min-width: 1280px) {
-      width: 550px;
-      height: 492px;
-    }
-    &__mobile {
-      width: 307px;
-      height: 274px;
-      @media (min-width: 768px) {
-        display: none;
       }
     }
   }
