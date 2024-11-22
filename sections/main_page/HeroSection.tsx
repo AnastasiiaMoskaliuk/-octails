@@ -1,13 +1,19 @@
 "use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Select } from "@mantine/core";
 
 import heroData from "@/test-objects/HeroData";
 
 import Coctails from "./../../images/hero/Coctails.png";
-import { root } from "postcss";
 
 const HeroSection = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleButtonClick = (index: any) => {
+    setActiveIndex(index);
+  };
+
   return (
     <section className="container flex flex-col justify-between md:flex-row items-center  mt-[60px] mb-[40px] ">
       <div className="md:w-[55%] flex flex-col items-center gap-[40px] md:items-start">
@@ -28,11 +34,16 @@ const HeroSection = () => {
         <div className="hidden md:flex md:w-[67%]  md:flex-row md:flex-wrap md:gap-[5px] lg:gap-[8px] lg:w-[70%]">
           {heroData.map((option, index) => (
             <button
-              key={index}
-              className=" md:text-[#5F6775] md:text-[18px] text-start md:font-bold lg:text-[24px] hover:transform hover:scale-110"
-            >
-              {option.label}
-            </button>
+  key={index}
+  className={`md:text-[18px] text-start md:font-bold lg:text-[24px] 
+    ${activeIndex === index ? "text-[#fd5103]" : "text-[#5F6775]"} 
+    hover:transform hover:scale-110`} 
+  onClick={() => handleButtonClick(index)} 
+>
+  {option.label}
+</button>
+
+      
           ))}
         </div>
       </div>
@@ -42,49 +53,37 @@ const HeroSection = () => {
         alt="Coctails"
       />
       <Select
-       className="md:hidden mt-[20px] "
+        className="md:hidden mt-[20px]"
         data={heroData}
+        dropdownPosition="bottom"
         defaultValue="A"
-        styles={(theme) => ({
-          root: {
-            width: '93px',
-            borderRadius: '6px',
-            border: '1px solid #fd5103',
-            '&:hover': { backgroundColor: '#fd5103' },
-            transition: 'background-color 0.3s ease',
-          },
+        classNames={{
+          root: "w-[93px] rounded-[6px] border border-[#fd5103] hover:bg-[#fd5103] transition-all duration-300 ease-in-out focus-within:border-[#fd5103] focus-within:ring-0",
+          item: "flex items-center justify-center hover:bg-[#fd5103] hover:text-white transition-all duration-300 ease-in-out focus:bg-[#fd5103] focus:text-white focus:bg-none",
+          dropdown: "bg-white",
+          input:
+            "text-center font-bold text-[#fd5103] text-[18px] border border-[#fd5103] focus:outline-none focus:border-[#fd5103] focus:ring-[#fd5103] focus:ring-2",
+        }}
+        styles={{
           item: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            '&:hover': {
-              backgroundColor: '#fd5103',
-              color: 'white',
-              transition: 'background-color 0.3s ease',
+            "&[data-selected]": {
+              backgroundColor: "#fd5103",
+              color: "white",
             },
-            '&[data-selected]': {
-              backgroundColor: '#fd5103',
-              color: 'white',
+            "&:hover": {
+              "&[data-selected]": {
+                backgroundColor: "#fd5103",
+                color: "white",
+              },
             },
-          },
-          dropdown: {
-            backgroundColor: 'white',
           },
           input: {
-            textAlign: 'center',
-            fontWeight: 'bold',
-            color: '#fd5103',
-            fontSize: '18px',
-            border: '1px solid #fd5103',
-            '&:focus': {
-              borderColor: '#fd5103',
-            },
-            '&[data-selected]': {
-              backgroundColor: '#fd5103',
-              color: 'white',
+            "&:focus": {
+              backgroundColor: "#fd5103",
+              color: "white",
             },
           },
-        })}
+        }}
       />
     </section>
   );
