@@ -12,7 +12,6 @@ interface HeaderProps {
 
 type SearchResult = {
   products: any[];
-  subTexts: any[];
 };
 
 const SearchComponent: FC<HeaderProps> = ({className}) => {
@@ -57,16 +56,14 @@ const SearchComponent: FC<HeaderProps> = ({className}) => {
     setShowAll(true);
   };
 
-  const { products, subTexts } = filteredResults || {
+  const { products} = filteredResults || {
     products: [],
-    subTexts: [],
   };
 
   const resultsToShow = showAll
-    ? [...products, ...subTexts]
+    ? [...products]
     : [
-        ...products.slice(0, 4),
-        ...subTexts.slice(0, 8 - Math.min(4, products.length)),
+        ...products.slice(0, 4)
       ];
 
   return (
@@ -132,25 +129,11 @@ const SearchComponent: FC<HeaderProps> = ({className}) => {
             {resultsToShow.length > 0 ? (
               resultsToShow.map((result, index) => (
                 <Link
-                  // href={result.href || ""}
                   href={`/${result.displayName}`}
                   key={result._id || `${result.name}-${index}`}
                   passHref
                 >
                   <div className="flex items-center bg-white rounded px-4 py-2 hover:bg-[#E5E8ED75] transition-colors duration-300 hover:underline">
-                    {/* {result.image_id ? (
-                      <Image
-                        src={
-                          testProduct.images.find(
-                            (img: any) => img.id === result.image_id
-                          )?.src || ""
-                        }
-                        alt={result.title}
-                        width={50}
-                        height={50}
-                        className="rounded"
-                      />
-                    ) : null} */}
                     <div className="ml-4">
                       <p
                         className={`font-bold ${

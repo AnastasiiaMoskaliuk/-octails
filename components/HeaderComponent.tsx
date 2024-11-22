@@ -32,12 +32,12 @@ const MenuItem: MenuItem[] = [
     title: "Catalog",
     link: "/",
   },
-  { title: "About us", link: "/" },
+  { title: "Contact us", link: "/contact-us" },
 ];
 
 const HeaderComponent = () => {
   const HeaderLogo: FC<HeaderProps> = ({ className }) => (
-    <Link href="">
+    <Link href="/">
       <Image src={Logo} alt="logo" />
     </Link>
   );
@@ -45,7 +45,9 @@ const HeaderComponent = () => {
   const NavigationList: FC<NavigationListProps> = ({ items, className }) => (
     <ul className={className}>
       {items.map((item, index) => (
-        <li key={index}>{item.title}</li>
+        <Link href={item.link} className="font-medium  hover:transform hover:scale-110">
+          <li key={index}>{item.title}</li>
+        </Link>
       ))}
     </ul>
   );

@@ -28,7 +28,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
 
   const Tag = tag;
 
-  const bgColor1 = "bg-[#fe7031]";
+  const bgColor1 = "bg-[#FD5103]";
   const bgColor2 = "bg-transparent";
   const bgColor3 = "bg-[#fd0303]";
   const textColor1 = "text-[#fe7031]";
@@ -57,7 +57,7 @@ const padding2 = "py-[11px] px-[34px]"
           disabled={disabled}
           onClick={onClick}
           href={href}
-          className={`${className} ${bgColor1} ${animation} ${padding} ${textSize} ${textColor2} flex flex-row items-center justify-center rounded font-bold ${activeBgColor1} ${hoverBgColor1} ${opacity}`}
+          className={`${className} ${bgColor1} ${animation} ${padding} ${textSize} ${textColor2} flex flex-row items-center justify-center rounded font-bold ${activeBgColor2} ${hoverBgColor2} ${opacity}`}
         >
           {text}
         </Tag>
