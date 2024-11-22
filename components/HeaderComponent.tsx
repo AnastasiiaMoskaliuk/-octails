@@ -28,16 +28,11 @@ interface NavigationListProps {
 }
 
 const MenuItem: MenuItem[] = [
-  { title: "Home", type: "link", link: "#" },
   {
-    title: "Favorite",
-    type: "submenu",
-    link: "",
-    submenu: [
-      { title: "Favorite cocktails", link: "#" },
-      { title: "Favorite ingredients", link: "#" },
-    ],
+    title: "Catalog",
+    link: "/",
   },
+  { title: "About us", link: "/" },
 ];
 
 const HeaderComponent = () => {
@@ -59,7 +54,7 @@ const HeaderComponent = () => {
     useDisclosure(false);
 
   return (
-    <header className="container flex justify-between items-center pt-[20px] ">
+    <header className="container flex justify-between items-end pt-[20px] ">
       <HeaderLogo />
       <nav className="hidden lg:flex">
         <NavigationList items={MenuItem} className="flex gap-[60px]" />
