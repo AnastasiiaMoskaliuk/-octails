@@ -30,7 +30,7 @@ interface NavigationListProps {
 const MenuItem: MenuItem[] = [
   {
     title: "Catalog",
-    link: "/",
+    link: "/catalog",
   },
   { title: "Contact us", link: "/contact-us" },
 ];
@@ -45,7 +45,7 @@ const HeaderComponent = () => {
   const NavigationList: FC<NavigationListProps> = ({ items, className }) => (
     <ul className={className}>
       {items.map((item, index) => (
-        <Link href={item.link} className="font-medium  hover:transform hover:scale-110">
+        <Link href={item.link} className="font-medium  hover: ">
           <li key={index}>{item.title}</li>
         </Link>
       ))}
